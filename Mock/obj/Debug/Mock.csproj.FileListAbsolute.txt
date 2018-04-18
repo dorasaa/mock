@@ -1,0 +1,5 @@
+C:\Dev\Mock\Mock\bin\Debug\Mock.exe.config
+C:\Dev\Mock\Mock\bin\Debug\Mock.exe
+C:\Dev\Mock\Mock\bin\Debug\Mock.pdb
+C:\Dev\Mock\Mock\obj\Debug\Mock.exe
+C:\Dev\Mock\Mock\obj\Debug\Mock.pdb
