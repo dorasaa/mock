@@ -33,7 +33,7 @@ namespace UnitTestProject1
             {
                 if (IsPrime(sum))
                 {
-                    //_objectstore.Save(sum);
+                    _objectstore.Save(sum);
                 }
             }
             return sum;

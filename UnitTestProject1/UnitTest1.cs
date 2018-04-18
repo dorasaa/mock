@@ -8,9 +8,11 @@ namespace UnitTestProject1
     [TestFixture]
     public class StringCalculator_UnitTest1
     {
+        private Mock<IStore>_mockstore;
         private StringCalculator GetCalculator()
         {
-            var calc = new StringCalculator();
+            _mockstore = new Mock<IStore>();
+            var calc = new StringCalculator(_mockstore.Object);
             return calc;
         }
         [Test]
@@ -57,15 +59,16 @@ namespace UnitTestProject1
             
         }
 
-        [Test]
+        [TestCase("3,4")]
+        [TestCase("7,9")]
         public void Add_ResultIsPremierNumber_ResultAreSaved()
         {
-            Mock<IStore> mockstore = new Mock<IStore>();
 
-            var calc = new StringCalculator(mockstore.Object);
+
+            var calc = GetCalculator();
             var result = calc.add("3,4");
 
-            mockstore.Verify(m => m.Save(It.IsAny<int>()));
+            _mockstore.Verify(m => m.Save(It.IsAny<int>()));
         }
 
     } //class
